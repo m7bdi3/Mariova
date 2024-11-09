@@ -113,7 +113,6 @@ interface PanelProps {
   description: string;
   panelIndex: number;
 }
-
 const Panel: React.FC<PanelProps> = ({
   id,
   title,
@@ -123,15 +122,15 @@ const Panel: React.FC<PanelProps> = ({
   return (
     <article
       id={id}
-      className="panel flex h-full w-full items-center justify-center p-8"
+      className="panel flex h-full w-full items-center justify-center p-4 md:p-8"
     >
-      <div className="grid h-full w-full gap-6 grid-cols-1 md:grid-cols-2 grid-rows-3 md:grid-rows-2 rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 relative">
-        <div className="col-span-1 row-span-1 md:row-span-2 rounded-l-xl shadow-inner  p-8 bg-[#B17457] h-full w-full z-20">
-          <div className="relative h-full w-full flex flex-col justify-around pl-4 gap-4">
+      <div className="grid h-full w-full gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 grid-rows-[auto_1fr] md:grid-rows-2 rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 relative overflow-hidden">
+        <div className="col-span-1 row-span-1 md:row-span-2 rounded-t-xl md:rounded-l-xl shadow-inner p-4 md:p-8 bg-[#B17457] h-[300px] md:h-full w-full z-20">
+          <div className="relative h-full w-full flex flex-col justify-around pl-2 md:pl-4 gap-2 md:gap-4">
             <h2
-              className=" leading-[0.8] font-bold  text-[#FAF7F0] whitespace-pre-wrap break-words text-start"
+              className="leading-[0.8] font-bold text-[#FAF7F0] whitespace-pre-wrap break-words text-start"
               style={{
-                fontSize: `clamp(2rem, 6vw, 5.5rem)`,
+                fontSize: "clamp(2rem, 4vw, 5.5rem)",
                 display: "block",
               }}
             >
@@ -141,65 +140,51 @@ const Panel: React.FC<PanelProps> = ({
                 </span>
               ))}
             </h2>
-
-            <>
-              <p
-                className=" w-full  text-[#D8D2C2] lg:max-w-[90%] leading-[1.1] tracking-tighter font-serif italic"
-                style={{
-                  fontSize: `clamp(0.875rem, 1.5vw, 1.6rem)`,
-                }}
-              >
-                {description}
-              </p>
-
-              <span className="hidden md:flex w-40 h-40 md:w-52 md:h-52 rounded-full border-8  border-white text-6xl md:text-8xl font-bold items-center justify-center opacity-50">
-                {panelIndex + 1}
-              </span>
-            </>
-          </div>
-          <>
-            <span className="absolute md:hidden bottom-0 left-0 w-40 h-40 md:w-52 md:h-52 rounded-full border-8 m-8 border-white text-6xl md:text-8xl font-bold flex items-center justify-center opacity-50">
+            <p
+              className="w-full text-[#D8D2C2] lg:max-w-[90%] leading-[1.1] tracking-tighter font-serif italic"
+              style={{
+                fontSize: "clamp(0.9rem, 1vw,2rem)",
+              }}
+            >
+              {description}
+            </p>
+            <span className="hidden md:flex w-24 h-24 md:w-40 md:h-40 lg:w-52 lg:h-52 rounded-full border-4 md:border-8 border-white text-4xl md:text-6xl lg:text-8xl font-bold items-center justify-center opacity-50">
               {panelIndex + 1}
             </span>
-            <span className="absolute top-0 left-0 w-full text-center text-[#FAF7F0] text-[1vw] font-bold whitespace-nowrap opacity-10">
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL
-            </span>
-
-            <span className="absolute bottom-0 left-0 w-full text-center text-[#FAF7F0] text-[1vw] font-bold whitespace-nowrap opacity-10">
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL
-            </span>
-
+          </div>
+          <span className="absolute md:hidden bottom-0 left-0 w-24 h-24 rounded-full border-4 m-4 border-white text-4xl font-bold flex items-center justify-center opacity-50">
+            {panelIndex + 1}
+          </span>
+          {["top", "bottom", "left", "right"].map((position) => (
             <span
-              className="absolute top-0 left-0 h-full text-[#FAF7F0] text-[1vw] font-bold whitespace-nowrap opacity-10"
-              style={{ writingMode: "vertical-lr" }}
+              key={position}
+              className={`absolute ${position}-0 ${
+                position === "left" || position === "right"
+                  ? "h-full"
+                  : "w-full"
+              } text-[#FAF7F0] text-[0.5vw] md:text-[1vw] font-bold whitespace-nowrap opacity-10`}
+              style={
+                position === "left" || position === "right"
+                  ? { writingMode: "vertical-lr" }
+                  : {}
+              }
             >
               BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
               BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
               BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
               BIO PEEL
             </span>
-            <span
-              className="absolute top-0 right-0 h-full text-[#FAF7F0] text-[1vw] font-bold whitespace-nowrap opacity-10"
-              style={{ writingMode: "vertical-lr" }}
-            >
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL - BIO PEEL -
-              BIO PEEL
-            </span>
-          </>
+          ))}
         </div>
-
-        <div className="col-span-1 row-span-2 md:row-span-2 rounded-r-xl shadow-inner flex items-center justify-center relative w-full h-full overflow-hidden">
-          <span className="w-8 absolute left-[35%] -translate-x-1/2 h-[2000px] bg-[#B17457] rotate-[26deg] z-0" />
-          <span className="w-8 absolute left-[40%] -translate-x-1/2 h-[2000px] bg-[#D8D2C2] rotate-[26deg] z-0" />
-          <span className="w-8 absolute left-[45%] -translate-x-1/2 h-[2000px] bg-[#B17457] rotate-[26deg] z-0" />
+        <div className="col-span-1 row-span-1 md:row-span-2 rounded-b-xl md:rounded-r-xl shadow-inner flex items-center justify-center relative w-full h-full overflow-hidden">
+          {[35, 40, 45].map((left) => (
+            <span
+              key={left}
+              className={`w-4 md:w-8 absolute left-[${left}%] -translate-x-1/2 h-[2000px] bg-[${
+                left === 40 ? "#D8D2C2" : "#B17457"
+              }] rotate-[26deg] z-0`}
+            />
+          ))}
           <View className="h-full w-full flex items-center justify-center">
             <Suspense fallback={null}>
               <PerspectiveCamera position={[0, 0, -50]} />
