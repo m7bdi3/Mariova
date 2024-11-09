@@ -1,5 +1,5 @@
 const title = "Mariova";
-const url = "/";
+const url = "https://mariova.vercel.app/";
 const description = "Tommorrow's skincare today";
 const author = "M7bdi3";
 const twitter = "@badi3nnn";
