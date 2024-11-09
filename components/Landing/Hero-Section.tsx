@@ -195,13 +195,13 @@ export function HeroSection() {
   return (
     <div
       ref={heroRef}
-      className="min-h-screen h-dvh w-full relative overflow-hidden mx-auto"
+      className="min-h-dvh h-dvh w-full relative overflow-hidden mx-auto"
       id="hero-section"
     >
       {[...Array(20)].map((_, i) => (
         <span
           key={i}
-          className="absolute h-[3000px] w-[calc(100vw/60)] opacity-10 bg-[#B17457] bg-line "
+          className="absolute h-[3000px] w-[calc(100vw/60)] opacity-10 bg-[#B17457] bg-line"
           style={{
             right: i < 10 ? `${i * 5}%` : "auto",
             left: i >= 10 ? `${(i - 10) * 5}%` : "auto",
@@ -209,80 +209,18 @@ export function HeroSection() {
         />
       ))}
       <span className="absolute w-[calc(100vw/60)] h-[3000px] opacity-20 left-[50%] -translate-x-1/2 bg-[#B17457] bg-line" />
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          padding: 40,
-          display: "inline-flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "flex-start",
-          pointerEvents: "none",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            padding: 0,
-            display: "inline-flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+      <div className="absolute top-0 left-0 w-full h-full p-4 flex flex-col items-start justify-start pointer-events-none">
+        <div className="w-full p-0 m-0 flex items-center justify-between">
           <p
-            style={{
-              fontFamily: "'Antonio', sans-serif",
-              flex: "1 1 0%",
-              height: 30,
-              fontSize: 40,
-              fontWeight: "700",
-              lineHeight: "30px",
-              letterSpacing: -2,
-            }}
             ref={titleRef}
-            className="text-[#B17457] opacity-0"
+            className="font-['Antonio',sans-serif] text-4xl font-bold tracking-tighter text-[#B17457] opacity-0 flex-grow"
           >
             MARIOVA
           </p>
-          <div style={{ flex: "1 1 0%", display: "flex", gap: "2em" }}></div>
-          <p
-            style={{
-              flex: "1 1 0%",
-              height: 30,
-              fontSize: 30,
-              lineHeight: "30px",
-              textAlign: "right",
-              color: "#B17457",
-            }}
-          >
-            ✧
-          </p>
+          <p className="text-3xl text-[#B17457]">✧</p>
         </div>
-        <div
-          style={{
-            width: "100%",
-            padding: 0,
-            display: "inline-flex",
-            flexDirection: "row",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            marginTop: "20px",
-          }}
-        >
-          <p
-            style={{
-              flex: "1 1 0%",
-              height: "100%",
-              fontSize: 14,
-              lineHeight: "1.5em",
-              color: "#272829",
-            }}
-          >
+        <div className="w-full p-0 flex items-start justify-between mt-5 ">
+          <p className="text-sm leading-relaxed text-[#272829]">
             <b>Natural Ingredients</b>
             <br />
             Radiant Skin
@@ -290,117 +228,41 @@ export function HeroSection() {
             <b>—</b>
           </p>
           <p
+            className="text-lg font-bold text-[#272829] whitespace-nowrap"
             style={{
-              transform: "rotate3d(0, 0, 1, 90deg) translate3d(100%,10px,0)",
-              transformOrigin: "right",
-              fontSize: 18,
-              fontWeight: "700",
-              lineHeight: "100%",
-              textAlign: "right",
-              color: "#272829",
-              whiteSpace: "nowrap",
+              writingMode: "vertical-lr",
             }}
           >
             EXPLORE PRODUCTS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ○
           </p>
         </div>
-        <div
-          className="full"
-          style={{
-            fontFamily: "'Antonio', sans-serif",
-            width: "100%",
-            flex: "1 1 0%",
-            padding: 0,
-            display: "inline-flex",
-            flexDirection: "row",
-            alignItems: "flex-end",
-            justifyContent: "center",
-          }}
-        >
+        <div className="w-full h-full absolute top-0 left-0 font-['Antonio',_sans-serif]">
           <p
-            style={{
-              flex: "1 1 0%",
-              fontSize: 220,
-              lineHeight: "200px",
-              writingMode: "vertical-lr",
-              color: "#B17457",
-              margin: "0",
-              letterSpacing: -10,
-            }}
             ref={glowTextRef}
-          ></p>
-          <div style={{ width: 10 }} />
-          <p
+            className="absolute top-[20%]  md:top-[15%] left-[-10%] md:left-[1%] text-[10rem] md:text-[12rem] xl:text-[14rem] text-[#B17457] tracking-tighter"
             style={{
-              flex: "1 1 0%",
-              fontSize: 120,
-              lineHeight: "100%",
-              textAlign: "right",
-              color: "#272829",
-              margin: 0,
-              letterSpacing: -2,
+              writingMode: "vertical-lr",
             }}
+          />
+          <p
             ref={timeTextRef}
-          ></p>
+            className="absolute bottom-[10%] right-0 md:right-[3%] text-[2rem] md:text-[8rem] xl:text-[10rem] text-[#272829] pr-4 md:pr-0"
+          />
         </div>
-        <div style={{ height: 60 }} />
-        <div
-          style={{
-            pointerEvents: "all",
-            width: "100%",
-            padding: 0,
-            display: "inline-flex",
-            flexDirection: "row",
-            alignItems: "flex-end",
-            justifyContent: "center",
-          }}
-        >
-          <p
-            className="full"
-            style={{
-              whiteSpace: "nowrap",
-              flex: "1 1 0%",
-              fontSize: 16,
-              lineHeight: "1.5em",
-              color: "#272829",
-            }}
-          >
+        <div className="absolute w-full h-fit bottom-0 left-0 font-['Antonio',_sans-serif]  ">
+          <p className="absolute bottom-0 left-0 p-4 text-sm whitespace-nowrap">
             <b>Dermatologist Approved</b>
             <br />
             Clinically Tested
           </p>
-          <p
-            className="full"
-            style={{
-              fontFamily: "'Antonio', sans-serif",
-              flex: "1 1 0%",
-              fontSize: 20,
-              fontWeight: "700",
-              lineHeight: "1em",
-              textAlign: "center",
-              color: "#272829",
-              letterSpacing: -0.5,
-              whiteSpace: "nowrap",
-            }}
-          >
+          <p className="absolute bottom-0 md:left-1/2 md:-translate-x-1/2 m-0 right-0 pb-4 pr-4 md:pr-0 text-sm md:text-2xl font-bold w-fit font-['Antonio',sans-serif] self-center">
             Reveal Your Natural Beauty
           </p>
-          <p
-            className="full"
-            style={{
-              flex: "1 1 0%",
-              fontSize: 12,
-              lineHeight: "1em",
-              textAlign: "right",
-              color: "#272829",
-            }}
-          ></p>
         </div>
       </div>
       <div
-        className="w-full h-full opacity-0 z-10 absolute top-0 left-0"
-        id="canvasRef"
         ref={canvasRef}
+        className="md:w-full md:h-full h-[400px] w-[200px] opacity-0 -z-50 absolute top-1/2 -translate-y-1/2 md:bottom-0 md:left-0 right-0   "
       >
         <View className="flex h-full w-full flex-col items-center justify-center">
           <Suspense fallback={null}>
@@ -410,7 +272,6 @@ export function HeroSection() {
               near={1}
               far={100}
             />
-
             <Model />
             <Bubbles />
             <Common color="" />

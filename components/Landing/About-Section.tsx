@@ -198,12 +198,12 @@ export function AboutSection() {
     <div
       ref={sectionRef}
       id="about-section"
-      className="relative min-h-screen flex items-center justify-center w-full pb-16"
+      className="relative min-h-dvh h-full md:h-full flex items-center justify-center w-full md:pb-16"
     >
-      <div className="h-full">
+      <div className="h-full w-full">
         <div className="w-screen py-16 relative">
           <span
-            className="absolute left-0 top-0 bg-[#B17457] w-full h-full"
+            className="absolute left-0 top-0 bg-[#B17457] w-screen h-full"
             ref={bgRef}
           />
           <h2
@@ -228,18 +228,18 @@ export function AboutSection() {
         <div className="container mx-auto items-center justify-start h-full w-full flex flex-col">
           <div
             ref={textRef}
-            className="text-xl my-12 items-center justify-center w-full flex flex-col lg:max-w-[75%] px-8 mx-auto font-semibold font-mono space-y-2 text-justify "
+            className="md:text-xl text-xs my-12 items-center justify-center w-full flex flex-col lg:max-w-[75%] px-8 mx-auto font-semibold font-mono space-y-2 md:text-justify "
           >
             <p></p>
             <p></p>
           </div>
-          <div className="w-full h-[350px]">
+          <div className="w-full md:h-[350px]">
             <div
               ref={listRef}
-              className="flex items-center justify-center w-full h-full list-none"
+              className="flex  items-center justify-center w-full h-full list-none"
             >
               <div
-                className="h-full w-[300px] relative flex items-center justify-center opacity-0"
+                className="h-full md:w-[300px] w-full relative flex items-center justify-center opacity-0"
                 id="bgRef"
                 ref={canvasRef}
               >
@@ -250,22 +250,22 @@ export function AboutSection() {
                   </Suspense>
                 </View>
               </div>
-              <div className="flex flex-col relative h-full justify-center items-start gap-6">
+              <div className="flex flex-col relative h-full justify-center items-start md:gap-6 flex-1 w-full">
                 <span className="flex items-center gap-2 justify-start">
-                  <ArrowRight className="size-6 arrow" />
-                  <li className="text-xl font-semibold text-nowrap font-mono">
+                  <ArrowRight className="size-4 md:size-6 arrow" />
+                  <li className="text-xs md:text-xl font-semibold text-nowrap font-mono">
                     Cell rejuvenation technology
                   </li>
                 </span>
                 <span className="flex items-center gap-2 justify-start font-mono">
-                  <ArrowRight className="size-6 arrow" />
-                  <li className="text-xl font-semibold text-nowrap">
+                  <ArrowRight className="size-4 md:size-6  arrow" />
+                  <li className="text-xs md:text-xl font-semibold text-nowrap">
                     Enhanced collagen production
                   </li>
                 </span>
                 <span className="flex items-center gap-2 justify-start font-mono">
-                  <ArrowRight className="size-6 arrow" />
-                  <li className="text-xl font-semibold text-nowrap">
+                  <ArrowRight className="size-4 md:size-6  arrow" />
+                  <li className="text-xs md:text-xl font-semibold text-nowrap">
                     Scientifically optimized ingredients
                   </li>
                 </span>

@@ -191,7 +191,7 @@ export function IngredientsSection() {
     <section
       ref={sectionRef}
       id="ingredientRef"
-      className="min-h-screen relative flex items-center justify-center bg-gradient-to-b from-[#272829] to-[#1a1b1c] text-[#FAF7F0] overflow-hidden rounded-t-[12rem] mt-12"
+      className="min-h-screen relative flex items-center justify-center bg-gradient-to-b from-[#272829] to-[#1a1b1c] text-[#FAF7F0] overflow-hidden md:rounded-t-[12rem] mt-12"
     >
       <VerticalText />
       <WaveAndBlob />
@@ -199,14 +199,17 @@ export function IngredientsSection() {
         <div className="space-y-8 text-center lg:text-start w-full col-span-2 flex flex-col items-start justify-center">
           <h2
             id="title"
-            className="text-5xl font-bold tracking-tighter sm:text-7xl xl:text-8xl mb-6"
+            className="text-5xl font-bold tracking-tighter md:text-7xl xl:text-8xl mb-6"
           >
             Ingredients that{" "}
             <span className="font-serif italic font-light text-[#D8D2C2]">
               Transform
             </span>
           </h2>
-          <p id="description" className="max-w-xl text-lg text-gray-300">
+          <p
+            id="description"
+            className="max-w-xl text-sm md:text-lg text-gray-300"
+          >
             Our carefully selected ingredients work in harmony to deliver
             exceptional results. Each component is chosen for its purity and
             effectiveness.
@@ -313,8 +316,10 @@ any) {
         className="rounded-full object-cover size-16 border-2 border-[#FAF7F0]"
       />
       <div>
-        <h3 className="text-xl font-semibold">{ingredient.name}</h3>
-        <p className="text-sm text-gray-400">{ingredient.description}</p>
+        <h3 className=" md:text-xl font-semibold">{ingredient.name}</h3>
+        <p className="text-xs md:text-sm text-gray-400">
+          {ingredient.description}
+        </p>
       </div>
     </li>
   );
