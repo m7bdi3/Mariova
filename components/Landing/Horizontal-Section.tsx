@@ -177,14 +177,9 @@ const Panel: React.FC<PanelProps> = ({
           ))}
         </div>
         <div className="col-span-1 row-span-1 md:row-span-2 rounded-b-xl md:rounded-r-xl shadow-inner flex items-center justify-center relative w-full h-full overflow-hidden">
-          {[35, 40, 45].map((left) => (
-            <span
-              key={left}
-              className={`w-4 md:w-8 absolute left-[${left}%] -translate-x-1/2 h-[2000px] bg-[${
-                left === 40 ? "#D8D2C2" : "#B17457"
-              }] rotate-[26deg] z-0`}
-            />
-          ))}
+          <span className="w-8 absolute left-[35%] -translate-x-1/2 h-[2000px] bg-[#B17457] rotate-[26deg] z-0" />
+          <span className="w-8 absolute left-[40%] -translate-x-1/2 h-[2000px] bg-[#D8D2C2] rotate-[26deg] z-0" />
+          <span className="w-8 absolute left-[45%] -translate-x-1/2 h-[2000px] bg-[#B17457] rotate-[26deg] z-0" />
           <View className="h-full w-full flex items-center justify-center">
             <Suspense fallback={null}>
               <PerspectiveCamera position={[0, 0, -50]} />
