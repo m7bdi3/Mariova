@@ -202,7 +202,6 @@ const Panel: React.FC<PanelProps> = ({
           <span className="w-8 absolute left-[45%] -translate-x-1/2 h-[2000px] bg-[#B17457] rotate-[26deg] z-0" />
           <View
             className="h-full w-full flex items-center justify-center"
-            orbit={false}
           >
             <Suspense fallback={null}>
               <PerspectiveCamera position={[0, 0, -50]} />

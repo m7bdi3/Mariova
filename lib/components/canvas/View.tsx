@@ -18,10 +18,9 @@ const View = forwardRef(
   (
     {
       children,
-      orbit,
       className,
       ...props
-    }: { children: React.ReactNode; orbit: boolean; className: string },
+    }: { children: React.ReactNode; className: string },
     ref
   ) => {
     const localRef = useRef<HTMLDivElement>(null!);

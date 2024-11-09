@@ -228,10 +228,7 @@ export function IngredientsSection() {
           id="model-container"
           className="w-full h-full absolute -z-10 opacity-0"
         >
-          <View
-            className="h-full w-full flex items-center justify-center"
-            orbit={false}
-          >
+          <View className="h-full w-full flex items-center justify-center">
             <Suspense fallback={null}>
               <PerspectiveCamera
                 position={[0, 0, 4]}

@@ -243,7 +243,7 @@ export function AboutSection() {
                 id="bgRef"
                 ref={canvasRef}
               >
-                <View className="h-full w-full" orbit={false}>
+                <View className="h-full w-full">
                   <Suspense fallback={null}>
                     <Model />
                     <Common color="" />

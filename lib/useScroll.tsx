@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { LenisRef, ReactLenis } from "lenis/react";
 import { ReactNode, useEffect, useRef } from "react";

@@ -293,7 +293,6 @@ export function HowToUseSection() {
 
             <View
               className="h-full w-full flex items-center justify-center"
-              orbit={false}
             >
               <Suspense fallback={null}>
                 <PerspectiveCamera position={[0, 0, 0]} />

@@ -402,10 +402,7 @@ export function HeroSection() {
         id="canvasRef"
         ref={canvasRef}
       >
-        <View
-          className="flex h-full w-full flex-col items-center justify-center"
-          orbit={false}
-        >
+        <View className="flex h-full w-full flex-col items-center justify-center">
           <Suspense fallback={null}>
             <PerspectiveCamera
               position={[0, 0, 20]}
